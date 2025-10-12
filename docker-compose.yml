@@ -158,7 +158,7 @@ services:
 
   # webproxy traefik
   traefik:
-    image: traefik:2.10
+    image: traefik:v2.11
     command:
       - "--providers.docker=true"
       - "--providers.docker.exposedbydefault=false"
