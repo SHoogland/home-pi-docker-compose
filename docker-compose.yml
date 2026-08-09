@@ -103,7 +103,7 @@ services:
     restart: unless-stopped
 
   nginx-proxy:
-    image: nginx:1.30.0
+    image: nginx:1.31.3
     expose:
       - "80"
     volumes:
