@@ -1,7 +1,3 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "prHourlyLimit": 10,
-  "assignees": [
-    "SHoogland"
-  ]
+  "extends": ["github>shoogland/.github"]
 }
