@@ -181,3 +181,26 @@ services:
         max-file: "3"
         max-size: "10m"
     restart: unless-stopped
+
+  nut-server:
+    build: ./nut-server
+    container_name: nut-server
+    ports:
+      - "3493:3493"
+    volumes:
+      - "/dev/bus/usb:/dev/bus/usb"
+    device_cgroup_rules:
+      - "c 189:* rwm"
+    environment:
+      NAME: aio
+      DRIVER: nutdrv_qx
+      PORT: auto
+      POLLFREQ: 5
+      DESC: "Energenie EG-UPS-PS2000-02"
+      VENDORID: "0001"
+      PRODUCTID: "0000"
+      SUBDRIVER: krauler
+      LANGID_FIX: "0x409"
+      USERSSTRING: "#"
+      TZ: Europe/Amsterdam
+    restart: unless-stopped
